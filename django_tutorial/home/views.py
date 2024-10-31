@@ -15,8 +15,10 @@ def bookings(request):
 
 
 
+
 def  doctors(request):
     return render(request,'doctors.html')
+
 
 
 
