@@ -1,6 +1,6 @@
 from  django.shortcuts import render
 from django.http  import HttpResponse
-from . models import Departments
+from . models import Departments,Doctors
 
 def index(request):
     return  render(request,'index.html')
@@ -18,7 +18,10 @@ def bookings(request):
 
 
 def  doctors(request):
-    return render(request,'doctors.html')
+    dict_docs={
+        'doctors':Doctors.objects.all()
+    }
+    return render(request,'doctors.html',dict_docs)
 
 
 
